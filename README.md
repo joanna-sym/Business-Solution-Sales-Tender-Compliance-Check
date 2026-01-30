@@ -1,71 +1,71 @@
-# Business-Solution-Sales-Tender-Compliance-Check
+![Business Value Card](https://github.com/joanna-sym/Business-Solution-Sales-Tender-Compliance-Check/blob/main/assets/Github%20Banner-Joanna%20Shen.jpg)
 
-[中文] | [English]
+# ❤️ 阿九Joanna · 标书合规排雷引擎 (MedOps Engine)
 
-> **MedOps Series**: No.01
-> **Domain**: Sales & Marketing (营销与销售)
-> **Author**: 阿九 Joanna
+> **"将医疗器械标书初筛从 4 小时缩短至 30 秒。"**
+> **"From 4 hours to 30 seconds for MedTech tender auditing."**
 
 ---
 
-## 📖 项目背景 (Background)
+## 🌟 核心价值看板 (Business Value)
+
+![Business Value Card](https://github.com/joanna-sym/Business-Solution-Sales-Tender-Compliance-Check/blob/main/assets/image01.png)
 
 ### 🇨🇳 中文介绍
-在医疗器械招投标（Tender）过程中，一份 500+ 页的招标文件通常包含大量隐蔽的“控标参数”和“否决项（★条款）”。传统的人工审阅方式（Sales/商务手动划重点）存在三大痛点：
-1.  **效率低**：人工通读一份标书耗时 4-6 小时。
-2.  **风险高**：极易漏看带“★”的否决项，导致直接废标。
-3.  **协作难**：技术参数与注册证信息的比对依赖跨部门反复沟通。
+在医疗器械招投标过程中，500+ 页的招标文件隐藏着无数“控标陷阱”与“废标条款（★项）”。本项目是 **MedOps (医疗运营)** 体系的首个自动化方案，旨在解决以下痛点：
+* **效率瓶颈**：人工核对几百项参数，极其耗时且疲劳。
+* **废标风险**：肉眼漏看一行小字，可能导致整个省份的市场丢失。
+* **数据孤岛**：注册证参数与标书要求的比对往往依赖跨部门反复口头确认。
 
-本项目是 **MedOps (医疗运营)** 体系下的第一个自动化工具。它利用 Python 自动化提取 Word 标书中的关键技术参数，并与企业内部 Excel 产品库进行自动比对，输出可视化的差异分析报告。
-
-**核心价值**：将标书初筛时间从 **4 小时压缩至 30 秒**，并提供 100% 的否决项覆盖率。
-
----
+**核心逻辑**：利用 Python 结构化解析技术，自动对标，红色高亮风险，实现“秒级排雷”。
 
 ### 🇺🇸 English Introduction
-**Automated Medical Tender Compliance Audit Tool**
-
-In the medical device procurement process, tender documents often contain hidden mandatory requirements ("★" clauses). Manual review is time-consuming and error-prone. 
-
-This tool leverages **Python (pandas, python-docx)** and **Streamlit** to:
-1.  **Parse** technical parameter tables from Word documents automatically.
-2.  **Audit** requirements against the internal Product Specification Database (Excel).
-3.  **Visualise** compliance risks with a user-friendly Web GUI.
-
-**Impact**: Reduces tender review time by **98%** and eliminates human error in identifying rejection terms.
+This automated engine is designed for the MedTech industry to solve the high-risk, low-efficiency problem in tender document review. It automatically extracts technical parameters and audits them against internal product specifications.
 
 ---
 
-## ⚡️ 核心功能 (Key Features)
+## 🚀 演示与架构 (Demo & Architecture)
 
-- [x] **Step 00: Mock Data Generator** - 一键生成模拟标书与产品库，方便 Demo 演示与测试。
-- [x] **Step 01: Core Logic Engine** - 纯 Python 后台脚本，执行精准的参数提取与比对算法。
-- [x] **Step 02: Interactive GUI (Content OS)** - 基于 Streamlit 的可视化操作系统，支持进度条演示与红绿灯风险高亮。
-- [x] **Robust Parsing** - 智能识别包含 "Parameter/指标" 关键词的表格，自动容错。
+![Operation Demo GIF](https://github.com/joanna-sym/Business-Solution-Sales-Tender-Compliance-Check/blob/main/assets/cap%2020260130.gif)
+
+![Tech Structure Card](https://github.com/joanna-sym/Business-Solution-Sales-Tender-Compliance-Check/blob/main/assets/image02.png)
+
+### 📂 核心功能 (Key Features)
+* **Step 00: Mock Data** - 一键生成测试用的模拟标书与产品库。
+* **Step 01: Core Engine** - 纯 Python 算法层，处理复杂的参数比对逻辑。
+* **Step 02: Content OS** - 基于 Streamlit 的可视化界面，蓝橙配色，专业感十足。
+* **🚀 One-Click Start** - 提供 `.bat` 批处理脚本，双击即用，无需配置环境。
 
 ---
 
-## 📂 项目结构 (Structure)
+## 🛠 复盘与技术笔记 (Reflection & Post-Mortem)
 
-```text
-Business-Solution-Sales-Tender-Compliance-Check/
-│
-├── README.md                     # 项目说明书 (Documentation)
-├── requirements.txt              # 依赖库列表 (Dependencies)
-├── 阿九Joanna标书合规排雷引擎启动.bat   # ✅ Windows 一键启动脚本 (One-click Launcher)
-│
-├── step00_generate_mock_data.py  # [初始化] 生成测试用的 Word/Excel 数据
-├── step01_tender_auditor.py      # [内核] 核心比对算法脚本
-├── step02_app_gui.py             # [前端] Streamlit 可视化界面 (App)
-│
-├── assets/                       # 资源文件夹
-│   └── profile.png               # 用户头像 (用于 UI 显示)
-│
-└── demo_data/                    # (Generated by step00)
-    ├── mock_tender_document.docx # 模拟标书
-    └── product_specs.xlsx        # 模拟产品参数库
+在从 0 到 1 的开发中，我沉淀了以下 MedOps 数字化转型经验：
 
-    ### ⚠️ 格式支持说明 (Format Support)
-为了确保 100% 的参数提取准确率，本工具 V1.0 版本主要针对 **.docx (Word)** 格式文件进行优化。
+### 1. 踩过的坑 (The "Pits")
+* **Windows 编码之坑**：最初终端无法显示 Emoji 导致崩溃，随后通过 Streamlit GUI 彻底绕过底层编码限制，提升了系统的稳定性。
+* **路径管理**：为了实现“解压即用”，引入了 `os.path` 动态定位技术，解决了不同电脑环境下找不到头像资源的问题。
 
-* **最佳实践**: 如果您持有的是 PDF 标书，建议先使用 Adobe Acrobat Pro 或 WPS Office 的 "PDF 转 Word" 功能进行预处理。
+### 2. 成功的弯路 (The "Detours")
+* **技术降级**：最初想做通用的 PDF 解析，但考虑到医疗数据的 **100% 准确性** 要求，最终决定让用户先利用 WPS/Adobe 将 PDF 转为 Word，将算法核心聚焦在“逻辑比对”而非“模糊识别”。
+
+### 3. 未来路线 (Roadmap)
+* [ ] 接入 Gemini  实现模糊语义理解（如：识别“钉仓”与“组件”的语义统一）。
+* [ ] 增加多产品线批量比对模式。
+
+---
+
+## 🏁 如何开始 (Getting Started)
+
+1. **环境安装**: `pip install -r requirements.txt`
+2. **生成数据**: 运行 `python step00_generate_mock_data.py`
+3. **一键启动**: 双击运行 **`阿九Joanna标书合规排雷引擎启动.bat`**
+
+---
+
+## 👤 作者 (Author)
+**阿九 Joanna** (Medical Device Professional / Python Enthusiast)
+*专注医械行业数字化效率提升 | MedTech Digital Matrix*
+
+---
+*MIT License © 2026 阿九Joanna*
